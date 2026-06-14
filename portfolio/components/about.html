@@ -1,0 +1,273 @@
+<!-- ABOUT & EXPERIENCE COMPONENT — components/about.html -->
+<section class="about section" id="about" aria-labelledby="about-heading">
+  <div class="container">
+    <div class="about-grid">
+      <!-- Sticky bio card -->
+      <aside aria-label="Personal information">
+        <div class="about-bio-card reveal">
+          <!-- Mini hexagonal profile photo -->
+          <div class="about-profile-small">
+            <div class="mini-glow"></div>
+            <div class="profile-ring"></div>
+            <img
+              src="assets/profile.webp"
+              alt="Mohamed Hassan"
+              width="90"
+              height="90"
+              loading="lazy"
+            />
+          </div>
+
+          <h3>Mohamed Hassan</h3>
+          <p class="role">// Full Stack .NET & AI Engineer</p>
+
+          <p>
+            Computer Engineering graduate with a 3.21 GPA from Suez Canal
+            University. Passionate about building clean, maintainable backend
+            systems and exploring the intersection of .NET engineering and
+            Generative AI.
+          </p>
+
+          <div class="about-meta">
+            <div class="about-meta-item">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                aria-hidden="true"
+              >
+                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
+                <circle cx="12" cy="10" r="3" />
+              </svg>
+              <span>Ismailia, Egypt · Open to Relocation</span>
+            </div>
+            <div class="about-meta-item">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                aria-hidden="true"
+              >
+                <path
+                  d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 1.1h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.69A16 16 0 0 0 16 16.73l.95-.89a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 23.73 18v-.08z"
+                />
+              </svg>
+              <span>(+20) 109-491-5914</span>
+            </div>
+            <div class="about-meta-item">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                aria-hidden="true"
+              >
+                <rect x="2" y="3" width="20" height="14" rx="2" ry="2" />
+                <line x1="8" y1="21" x2="16" y2="21" />
+                <line x1="12" y1="17" x2="12" y2="21" />
+              </svg>
+              <span>Military Status: Exempted</span>
+            </div>
+            <div class="about-meta-item">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                aria-hidden="true"
+              >
+                <circle cx="12" cy="12" r="10" />
+                <polyline points="12 6 12 12 16 14" />
+              </svg>
+              <span>Arabic: Native · English: B2</span>
+            </div>
+          </div>
+
+          <!-- Education -->
+          <div class="about-edu">
+            <h4>Education</h4>
+            <div class="about-edu-item">
+              <strong>B.Sc. Computer Engineering</strong>
+              Suez Canal University<br />
+              <span
+                style="
+                  color: var(--accent);
+                  font-family: var(--font-mono);
+                  font-size: var(--text-xs);
+                "
+                >2019 – 2024 · GPA 3.21/4.00</span
+              >
+            </div>
+          </div>
+        </div>
+
+        <!-- .NET Minimal API Endpoint Playground -->
+        <div class="api-playground-wrap reveal">
+          <div
+            class="api-playground"
+            id="api-playground"
+            aria-label="Interactive API endpoint demo"
+          >
+            <div class="api-chrome">
+              <div class="api-chrome-dots" aria-hidden="true">
+                <span></span><span></span><span></span>
+              </div>
+              <span class="api-chrome-title">ProfileEndpoint.cs</span>
+              <span class="api-chrome-badge">.NET 8</span>
+            </div>
+
+            <div class="api-request-bar">
+              <span class="api-method-badge">GET</span>
+              <div class="api-url-bar">
+                <span class="api-url-text"
+                  >https://api.mohamed.dev/v1/profile</span
+                >
+              </div>
+              <button
+                type="button"
+                class="api-send-btn"
+                aria-label="Execute GET request"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="14"
+                  height="14"
+                  viewBox="0 0 24 24"
+                  fill="currentColor"
+                  aria-hidden="true"
+                >
+                  <polygon points="5 3 19 12 5 21 5 3" />
+                </svg>
+                Send
+              </button>
+            </div>
+
+            <div class="api-response">
+              <div class="api-response-header">
+                <span class="api-response-label">Response</span>
+                <span class="api-status-badge" aria-live="polite">—</span>
+              </div>
+              <div class="api-response-body">
+                <div class="api-loader" aria-hidden="true">
+                  <div class="api-stream-pulse">
+                    <span></span><span></span><span></span><span></span
+                    ><span></span>
+                  </div>
+                  <p class="api-loader-text">Streaming profile data…</p>
+                </div>
+                <pre class="api-json"><code>
+<span class="json-line"><span class="json-brace">{</span></span>
+<span class="json-line">  <span class="json-key">"status"</span>: <span class="json-num">200</span>,</span>
+<span class="json-line">  <span class="json-key">"message"</span>: <span class="json-str">"Success"</span>,</span>
+<span class="json-line">  <span class="json-key">"data"</span>: <span class="json-brace">{</span></span>
+<span class="json-line">    <span class="json-key">"name"</span>: <span class="json-str">"Mohamed Hassan"</span>,</span>
+<span class="json-line">    <span class="json-key">"role"</span>: <span class="json-str">"Full Stack .NET &amp; AI Engineer"</span>,</span>
+<span class="json-line">    <span class="json-key">"location"</span>: <span class="json-str">"Ismailia, Egypt"</span>,</span>
+<span class="json-line">    <span class="json-key">"status"</span>: <span class="json-str">"Open to Work"</span>,</span>
+<span class="json-line">    <span class="json-key">"stack"</span>: [<span class="json-str">"ASP.NET Core"</span>, <span class="json-str">"C#"</span>, <span class="json-str">"Angular"</span>, <span class="json-str">"Python"</span>, <span class="json-str">"LangChain"</span>]</span>
+<span class="json-line">  <span class="json-brace">}</span></span>
+<span class="json-line"><span class="json-brace">}</span></span>
+                </code></pre>
+              </div>
+            </div>
+          </div>
+        </div>
+      </aside>
+
+      <!-- Timeline -->
+      <div class="timeline-section">
+        <span class="section-label">Career Journey</span>
+        <h2 id="about-heading" class="section-title">
+          Experience &amp; <span>Education</span>
+        </h2>
+
+        <ol class="timeline" aria-label="Professional timeline">
+          <!-- ITI -->
+          <li class="timeline-item reveal">
+            <time class="timeline-date" datetime="2026-01"
+              >Jan 2026 – Present</time
+            >
+            <div class="timeline-card">
+              <h3 class="timeline-role">Full-Stack .NET &amp; AI Trainee</h3>
+              <p class="timeline-company">
+                Information Technology Institute (ITI) ·
+                <a
+                  href="https://iti.gov.eg"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >iti.gov.eg</a
+                >
+              </p>
+              <ul class="timeline-bullets" aria-label="Key responsibilities">
+                <li>
+                  Building full-stack apps with ASP.NET Core, Angular
+                  (Standalone Components, Reactive Forms, Signals), and
+                  TypeScript.
+                </li>
+                <li>
+                  Designing databases with SQL Server, EF Core, and LINQ;
+                  secured APIs via JWT, Route Guards, and HTTP Interceptors.
+                </li>
+                <li>
+                  Constructing AI chatbots and RAG pipelines using Python and
+                  LangChain with prompt engineering optimization.
+                </li>
+                <li>
+                  Automating workflows with n8n and containerizing services with
+                  Docker across all projects.
+                </li>
+              </ul>
+            </div>
+          </li>
+
+          <!-- Suez Canal University -->
+          <li class="timeline-item reveal">
+            <time class="timeline-date" datetime="2019-09"
+              >Sep 2019 – Jun 2024</time
+            >
+            <div class="timeline-card">
+              <h3 class="timeline-role">B.Sc. Computer Engineering</h3>
+              <p class="timeline-company">
+                Suez Canal University · GPA: 3.21 / 4.00
+              </p>
+              <ul class="timeline-bullets">
+                <li>
+                  Studied core CS fundamentals: OOP, DSA, Computer Networks,
+                  Embedded Systems, and Software Engineering.
+                </li>
+                <li>
+                  Applied SDLC and Agile methodologies across academic and team
+                  projects.
+                </li>
+              </ul>
+              <div class="grad-project">
+                <p class="grad-project-label">🎓 Graduation Project</p>
+                <p>
+                  <strong>ADAS — Advanced Driver Assistance System</strong
+                  ><br />
+                  Built an AI-based object detection pipeline using YOLOv8 for
+                  real-time driver safety, integrating embedded simulation with
+                  software detection to enhance road awareness.
+                </p>
+              </div>
+            </div>
+          </li>
+        </ol>
+      </div>
+    </div>
+  </div>
+</section>

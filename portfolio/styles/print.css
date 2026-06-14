@@ -1,0 +1,120 @@
+/* ============================================================
+   PRINT STYLESHEET — print.css
+   Optimizes the page for recruiters who hit Ctrl+P
+   ============================================================ */
+
+@media print {
+  /* Fonts & colors */
+  body {
+    font-family: Georgia, 'Times New Roman', serif;
+    font-size: 11pt;
+    color: #111 !important;
+    background: #fff !important;
+    line-height: 1.5;
+  }
+
+  /* Hide non-essential elements */
+  .site-nav,
+  .scroll-progress,
+  .skip-link,
+  .hero-visual,
+  .scroll-indicator,
+  .hero-actions,
+  .hero-socials,
+  .filter-bar,
+  .contact-form-wrap,
+  .btn,
+  .theme-toggle,
+  .hamburger,
+  .site-footer,
+  .tools-cloud,
+  .skill-track {
+    display: none !important;
+  }
+
+  /* Reset all dark backgrounds */
+  * {
+    background: transparent !important;
+    border-color: #ccc !important;
+    box-shadow: none !important;
+    text-shadow: none !important;
+  }
+
+  /* Container full width */
+  .container { width: 100%; max-width: 100%; }
+
+  /* Remove section padding */
+  .section { padding-block: 1.5rem; }
+
+  /* Hero simplified */
+  .hero {
+    min-height: auto;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+  }
+  .hero::before,
+  .hero::after { display: none; }
+  .hero-inner { display: block; }
+
+  .hero-name {
+    font-size: 28pt;
+    color: #111 !important;
+    animation: none !important;
+    opacity: 1 !important;
+  }
+
+  .hero-greeting,
+  .hero-title-wrap,
+  .hero-description {
+    animation: none !important;
+    opacity: 1 !important;
+    color: #333 !important;
+    font-size: 11pt;
+  }
+
+  /* About grid to single column */
+  .about,
+  .about-grid { display: block !important; }
+  .about-bio-card { position: static; margin-bottom: 1rem; }
+  .timeline { padding-left: 1rem; }
+  .timeline::before { display: none; }
+  .timeline-item::before { display: none; }
+  .timeline-card { padding: 0.5rem 0; border: none; }
+
+  /* Skills */
+  .skills-grid { display: block; columns: 2; }
+  .skill-group { break-inside: avoid; margin-bottom: 0.75rem; }
+
+  /* Projects */
+  .projects-grid {
+    display: block;
+    columns: 2;
+  }
+  .project-card {
+    break-inside: avoid;
+    margin-bottom: 1rem;
+    border: 1px solid #ddd !important;
+    padding: 0.5rem;
+  }
+  .project-card:hover { transform: none; }
+
+  /* Links: show URLs */
+  a::after {
+    content: ' (' attr(href) ')';
+    font-size: 9pt;
+    color: #666;
+  }
+  .project-link::after,
+  .social-link::after,
+  .nav-logo::after { content: ''; }
+
+  /* Page breaks */
+  .about { page-break-after: always; }
+  .projects { page-break-after: always; }
+
+  /* Ensure text is readable */
+  .text-secondary, [class*="secondary"] { color: #444 !important; }
+  .text-muted,    [class*="muted"]      { color: #666 !important; }
+  .accent,        [class*="accent"]     { color: #1a3eb5 !important; }
+  .section-title  { color: #111 !important; }
+}

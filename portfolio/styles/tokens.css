@@ -1,0 +1,115 @@
+/* ============================================================
+   DESIGN TOKENS — tokens.css
+   All theme values live here. Edit these to retheme the site.
+   ============================================================ */
+
+:root {
+  /* --- Typography --- */
+  --font-display: 'Space Grotesk', system-ui, sans-serif;
+  --font-body:    'Inter', system-ui, sans-serif;
+  --font-mono:    'JetBrains Mono', 'Fira Code', monospace;
+
+  /* --- Type Scale (fluid) --- */
+  --text-xs:   clamp(0.70rem, 1vw, 0.75rem);
+  --text-sm:   clamp(0.85rem, 1.2vw, 0.9rem);
+  --text-base: clamp(1rem,    1.5vw, 1.0625rem);
+  --text-lg:   clamp(1.125rem,2vw,   1.25rem);
+  --text-xl:   clamp(1.25rem, 2.5vw, 1.5rem);
+  --text-2xl:  clamp(1.5rem,  3vw,   2rem);
+  --text-3xl:  clamp(2rem,    4vw,   2.75rem);
+  --text-4xl:  clamp(2.5rem,  6vw,   4rem);
+  --text-hero: clamp(3rem,    9vw,   6.5rem);
+
+  /* --- Spacing --- */
+  --sp-1:  0.25rem;
+  --sp-2:  0.5rem;
+  --sp-3:  0.75rem;
+  --sp-4:  1rem;
+  --sp-6:  1.5rem;
+  --sp-8:  2rem;
+  --sp-12: 3rem;
+  --sp-16: 4rem;
+  --sp-24: 6rem;
+  --sp-32: 8rem;
+
+  /* --- Layout --- */
+  --max-width:     1320px;
+  --section-pad-y: clamp(5rem, 10vw, 8rem);
+  --card-radius:   12px;
+  --btn-radius:    8px;
+
+  /* --- Transitions --- */
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-in-out: cubic-bezier(0.45, 0, 0.55, 1);
+  --dur-fast: 150ms;
+  --dur-base: 250ms;
+  --dur-slow: 400ms;
+}
+
+/* ============================================================
+   DARK THEME (default)
+   ============================================================ */
+[data-theme="dark"] {
+  --bg-page:       #080D1A;
+  --bg-surface:    #0F1629;
+  --bg-card:       #131C35;
+  --bg-card-hover: #1A2545;
+
+  --text-primary:   #E8EEFF;
+  --text-secondary: #8892B0;
+  --text-muted:     #4A5568;
+  --text-inverse:   #080D1A;
+
+  --accent:         #4F8EF7;
+  --accent-glow:    rgba(79, 142, 247, 0.18);
+  --accent-subtle:  rgba(79, 142, 247, 0.08);
+  --accent-hover:   #6BA3FA;
+
+  --border:         rgba(79, 142, 247, 0.12);
+  --border-strong:  rgba(79, 142, 247, 0.25);
+
+  --shadow-card: 0 4px 24px rgba(0,0,0,0.4), 0 1px 3px rgba(0,0,0,0.3);
+  --shadow-glow: 0 0 40px rgba(79, 142, 247, 0.15);
+
+  --badge-bg:   rgba(79, 142, 247, 0.1);
+  --badge-text: #7EB5FF;
+  --badge-border: rgba(79, 142, 247, 0.2);
+
+  --nav-bg: rgba(8, 13, 26, 0.85);
+  --scrollbar-track: #0F1629;
+  --scrollbar-thumb: #1F2F55;
+}
+
+/* ============================================================
+   LIGHT THEME
+   ============================================================ */
+[data-theme="light"] {
+  --bg-page:       #F5F7FF;
+  --bg-surface:    #FFFFFF;
+  --bg-card:       #FFFFFF;
+  --bg-card-hover: #EEF2FF;
+
+  --text-primary:   #0D1333;
+  --text-secondary: #4A5580;
+  --text-muted:     #9BA3BF;
+  --text-inverse:   #F5F7FF;
+
+  --accent:         #2B5EE8;
+  --accent-glow:    rgba(43, 94, 232, 0.12);
+  --accent-subtle:  rgba(43, 94, 232, 0.06);
+  --accent-hover:   #1A4BD4;
+
+  --border:         rgba(43, 94, 232, 0.1);
+  --border-strong:  rgba(43, 94, 232, 0.22);
+
+  --shadow-card: 0 4px 24px rgba(13, 19, 51, 0.08), 0 1px 3px rgba(13, 19, 51, 0.06);
+  --shadow-glow: 0 0 40px rgba(43, 94, 232, 0.08);
+
+  --badge-bg:   rgba(43, 94, 232, 0.07);
+  --badge-text: #1A4BD4;
+  --badge-border: rgba(43, 94, 232, 0.15);
+
+  --nav-bg: rgba(245, 247, 255, 0.88);
+  --scrollbar-track: #E8EBF7;
+  --scrollbar-thumb: #BCC6E8;
+}

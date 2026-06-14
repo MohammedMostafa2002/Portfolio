@@ -1,0 +1,181 @@
+<!-- PROJECTS COMPONENT — components/projects.html -->
+<section class="projects section" id="projects" aria-labelledby="projects-heading">
+  <div class="container">
+
+    <span class="section-label">Selected Work</span>
+    <h2 id="projects-heading" class="section-title">Featured <span>Projects</span></h2>
+
+    <!-- Filter bar -->
+    <div class="filter-bar" role="group" aria-label="Filter projects by category">
+      <button class="filter-btn active" data-filter="all">All Projects</button>
+      <button class="filter-btn" data-filter="backend">Backend</button>
+      <button class="filter-btn" data-filter="frontend">Frontend</button>
+      <button class="filter-btn" data-filter="ai">AI / GenAI</button>
+      <button class="filter-btn" data-filter="fullstack">Full Stack</button>
+    </div>
+
+    <!-- Projects grid -->
+    <div class="projects-grid" id="projects-grid">
+
+      <!-- EcommerceAPI -->
+      <article class="project-card reveal" data-categories="backend fullstack" aria-labelledby="proj-ecommerce">
+        <div class="project-card-header">
+          <div class="project-icon" aria-hidden="true">🛒</div>
+          <div class="project-links">
+            <a href="https://github.com/Mohamed-Hassan-M-M/EcommerceAPI" target="_blank" rel="noopener noreferrer" class="project-link" aria-label="EcommerceAPI GitHub repository">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+            </a>
+          </div>
+        </div>
+        <div class="project-card-body">
+          <p class="project-category">Backend · REST API</p>
+          <h3 class="project-title" id="proj-ecommerce">EcommerceAPI</h3>
+          <p class="project-description">
+            Scalable RESTful API for an e-commerce system focused on clean backend architecture beyond basic CRUD — implementing Layered Architecture with Repository Pattern and Unit of Work.
+          </p>
+          <ul class="project-highlights" aria-label="Project highlights">
+            <li>Product/Category management, Cart & Order workflows with pagination</li>
+            <li>JWT Authentication with ASP.NET Core Identity</li>
+            <li>FluentValidation + AutoMapper for clean DTO mapping</li>
+            <li>Swagger documentation + Image upload support</li>
+          </ul>
+          <div class="project-tags">
+            <span class="badge">ASP.NET Core</span>
+            <span class="badge">C#</span>
+            <span class="badge">EF Core</span>
+            <span class="badge">SQL Server</span>
+            <span class="badge">JWT</span>
+            <span class="badge">Swagger</span>
+          </div>
+        </div>
+      </article>
+
+      <!-- ShopZone -->
+      <article class="project-card reveal" data-categories="frontend fullstack" aria-labelledby="proj-shopzone">
+        <div class="project-card-header">
+          <div class="project-icon" aria-hidden="true">🏪</div>
+          <div class="project-links">
+            <a href="https://github.com/Mohamed-Hassan-M-M/ShopZone" target="_blank" rel="noopener noreferrer" class="project-link" aria-label="ShopZone GitHub repository">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+            </a>
+          </div>
+        </div>
+        <div class="project-card-body">
+          <p class="project-category">Full Stack · SPA</p>
+          <h3 class="project-title" id="proj-shopzone">ShopZone</h3>
+          <p class="project-description">
+            Full-stack e-commerce Single Page Application with complete product catalog, cart, checkout, and order management using Angular's modern architecture.
+          </p>
+          <ul class="project-highlights" aria-label="Project highlights">
+            <li>JWT auth via HTTP Interceptors and Route Guards</li>
+            <li>RxJS BehaviorSubject for real-time reactive state management</li>
+            <li>Feature-based Angular architecture with services, guards, models</li>
+          </ul>
+          <div class="project-tags">
+            <span class="badge">Angular</span>
+            <span class="badge">TypeScript</span>
+            <span class="badge">RxJS</span>
+            <span class="badge">JWT</span>
+          </div>
+        </div>
+      </article>
+
+      <!-- RAG Chatbot -->
+      <article class="project-card reveal" data-categories="ai" aria-labelledby="proj-rag">
+        <div class="project-card-header">
+          <div class="project-icon" aria-hidden="true">🤖</div>
+          <div class="project-links">
+            <a href="https://github.com/Mohamed-Hassan-M-M/RAG-Chatbot" target="_blank" rel="noopener noreferrer" class="project-link" aria-label="RAG Chatbot GitHub repository">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+            </a>
+          </div>
+        </div>
+        <div class="project-card-body">
+          <p class="project-category">AI · GenAI · NLP</p>
+          <h3 class="project-title" id="proj-rag">RAG Chatbot</h3>
+          <p class="project-description">
+            Retrieval-Augmented Generation chatbot enabling natural language Q&amp;A over custom documents, combining vector search with LLM-powered responses.
+          </p>
+          <ul class="project-highlights" aria-label="Project highlights">
+            <li>Optimized prompt templates for improved LLM accuracy</li>
+            <li>Vector similarity search for efficient document chunk retrieval</li>
+            <li>Conversational memory across multi-turn interactions</li>
+          </ul>
+          <div class="project-tags">
+            <span class="badge">Python</span>
+            <span class="badge">LangChain</span>
+            <span class="badge">RAG</span>
+            <span class="badge">Prompt Eng.</span>
+          </div>
+        </div>
+      </article>
+
+      <!-- Quiz System -->
+      <article class="project-card reveal" data-categories="frontend" aria-labelledby="proj-quiz">
+        <div class="project-card-header">
+          <div class="project-icon" aria-hidden="true">📝</div>
+          <div class="project-links">
+            <a href="https://github.com/Mohamed-Hassan-M-M/Quiz-System" target="_blank" rel="noopener noreferrer" class="project-link" aria-label="Quiz System GitHub repository">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+            </a>
+          </div>
+        </div>
+        <div class="project-card-body">
+          <p class="project-category">Frontend · Vanilla JS</p>
+          <h3 class="project-title" id="proj-quiz">Quiz System</h3>
+          <p class="project-description">
+            Responsive quiz application with dynamic questions, countdown timer, automated scoring, and persistent session data — built entirely with Vanilla JS.
+          </p>
+          <ul class="project-highlights" aria-label="Project highlights">
+            <li>RegEx form validation for secure user input</li>
+            <li>localStorage & sessionStorage for data persistence</li>
+            <li>Tailwind-powered responsive UI with dynamic scoring</li>
+          </ul>
+          <div class="project-tags">
+            <span class="badge">HTML5</span>
+            <span class="badge">CSS3</span>
+            <span class="badge">JavaScript</span>
+            <span class="badge">Tailwind</span>
+          </div>
+        </div>
+      </article>
+
+      <!-- ADAS Graduation -->
+      <article class="project-card reveal" data-categories="ai" aria-labelledby="proj-adas">
+        <div class="project-card-header">
+          <div class="project-icon" aria-hidden="true">🚗</div>
+          <div class="project-links">
+            <a href="https://github.com/Mohamed-Hassan-M-M/ADAS-Graduation" target="_blank" rel="noopener noreferrer" class="project-link" aria-label="ADAS Graduation GitHub repository">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+            </a>
+          </div>
+        </div>
+        <div class="project-card-body">
+          <p class="project-category">AI · Computer Vision · Embedded</p>
+          <h3 class="project-title" id="proj-adas">ADAS — Graduation Project</h3>
+          <p class="project-description">
+            Advanced Driver Assistance System using AI-based object detection for real-time road safety improvement, built as a capstone integrating software and embedded simulation.
+          </p>
+          <ul class="project-highlights" aria-label="Project highlights">
+            <li>Real-time object detection with YOLOv8</li>
+            <li>Improved driver safety through real-time detection pipeline</li>
+            <li>Software + embedded simulation integration</li>
+          </ul>
+          <div class="project-tags">
+            <span class="badge">Python</span>
+            <span class="badge">YOLOv8</span>
+            <span class="badge">Computer Vision</span>
+            <span class="badge">Embedded</span>
+          </div>
+        </div>
+      </article>
+
+    </div>
+
+    <!-- Empty state -->
+    <p class="projects-empty" id="projects-empty" role="status" aria-live="polite">
+      No projects found for this filter.
+    </p>
+
+  </div>
+</section>

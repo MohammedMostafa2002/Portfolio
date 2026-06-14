@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Mohamed Hassan — Full Stack .NET Developer & AI Engineer based in Ismailia, Egypt."
+    />
+    <title>Mohamed Hassan · Full Stack .NET Developer</title>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="styles/tokens.css?v=1.1" />
+    <link rel="stylesheet" href="styles/base.css?v=1.1" />
+    <link rel="stylesheet" href="styles/nav.css?v=1.1" />
+    <link rel="stylesheet" href="styles/hero.css?v=1.1" />
+    <link rel="stylesheet" href="styles/profile.css?v=1.1" />
+    <link rel="stylesheet" href="styles/about.css?v=1.1" />
+    <link rel="stylesheet" href="styles/skills.css?v=1.1" />
+    <link rel="stylesheet" href="styles/projects.css?v=1.1" />
+    <link rel="stylesheet" href="styles/contact.css?v=1.1" />
+    <link rel="stylesheet" href="styles/print.css?v=1.1" media="print" />
+    <!-- Favicon -->
+    <link
+      rel="icon"
+      href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🚀</text></svg>"
+    />
+  </head>
+  <body>
+    <!-- Global SVG clip-path (referenced by profile hex frame) -->
+    <svg
+      class="profile-svg-defs"
+      width="0"
+      height="0"
+      aria-hidden="true"
+      focusable="false"
+    >
+      <defs>
+        <clipPath id="profile-hex-clip" clipPathUnits="objectBoundingBox">
+          <polygon points="0.5,0 1,0.25 1,0.75 0.5,1 0,0.75 0,0.25" />
+        </clipPath>
+      </defs>
+    </svg>
+
+    <!-- Skip to main content (a11y) -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
+    <!-- Top Navigation -->
+    <div id="nav-root"></div>
+
+    <!-- Main Content -->
+    <main id="main-content">
+      <div id="hero-root"></div>
+      <div id="about-root"></div>
+      <div id="skills-root"></div>
+      <div id="projects-root"></div>
+      <div id="contact-root"></div>
+    </main>
+
+    <footer class="site-footer" role="contentinfo">
+      <p>
+        Designed & Built by <span class="accent">Mohamed Hassan</span> ·
+        <span id="footer-year"></span>
+      </p>
+    </footer>
+
+    <!-- Scripts -->
+    <script type="module" src="js/main.js"></script>
+  </body>
+</html>

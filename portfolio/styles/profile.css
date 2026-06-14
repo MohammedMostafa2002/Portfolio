@@ -1,0 +1,369 @@
+/* ============================================================
+   PROFILE PHOTO COMPONENT — profile.css
+   Geometric hexagonal frame with waveforms & interactive glow.
+   ============================================================ */
+
+/* ── Container ─────────────────────────────────────────────── */
+.profile-frame-container {
+  position: relative;
+  width: 380px;
+  height: 420px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  --mx: 0.5;
+  --my: 0.5;
+  --proximity: 0;
+  --wave-duration: 1.8s;
+  --hex-clip: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+}
+
+.profile-particle-canvas {
+  position: absolute;
+  inset: -30px;
+  width: calc(100% + 60px);
+  height: calc(100% + 60px);
+  pointer-events: none;
+  z-index: 0;
+  opacity: 0.65;
+}
+
+/* ── Glow Halo (behind everything) ─────────────────────────── */
+.profile-glow {
+  position: absolute;
+  inset: -40px;
+  border-radius: 50%;
+  background: radial-gradient(
+    ellipse at calc(var(--mx) * 100%) calc(var(--my) * 100%),
+    var(--accent-glow) 0%,
+    transparent 70%
+  );
+  opacity: 0.5;
+  filter: blur(30px);
+  pointer-events: none;
+  will-change: transform, opacity;
+  transition: opacity 0.35s var(--ease-out);
+}
+
+@keyframes glowShift {
+  0%   { transform: scale(1) rotate(0deg); }
+  50%  { transform: scale(1.08) rotate(3deg); }
+  100% { transform: scale(1) rotate(-3deg); }
+}
+
+/* ── Geometric Fragments (parallax layers) ─────────────────── */
+.profile-geo-frags {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.profile-geo-frags .frag {
+  position: absolute;
+  border: 1.5px solid var(--border-strong);
+  opacity: 0.35;
+  transition: transform 0.3s var(--ease-out);
+}
+
+.frag--hex {
+  width: 60px;
+  height: 60px;
+  clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+  background: var(--accent-subtle);
+  top: -10px;
+  right: 20px;
+  animation: fragFloat 8s ease-in-out infinite alternate;
+}
+
+.frag--tri {
+  width: 40px;
+  height: 40px;
+  clip-path: polygon(50% 0%, 100% 100%, 0% 100%);
+  background: var(--accent-subtle);
+  bottom: 20px;
+  left: -5px;
+  animation: fragFloat 10s ease-in-out infinite alternate-reverse;
+}
+
+.frag--circle {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: var(--accent-subtle);
+  top: 50%;
+  right: -12px;
+  animation: fragFloat 7s ease-in-out infinite alternate;
+}
+
+.frag--diamond {
+  width: 32px;
+  height: 32px;
+  clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+  background: var(--accent-subtle);
+  bottom: -5px;
+  right: 60px;
+  animation: fragFloat 9s ease-in-out infinite alternate-reverse;
+}
+
+@keyframes fragFloat {
+  0%   { transform: translateY(0) rotate(0deg); }
+  100% { transform: translateY(-12px) rotate(8deg); }
+}
+
+/* ── Outer Hexagonal Ring (pulsating) ──────────────────────── */
+.profile-hex-outer {
+  position: absolute;
+  width: 310px;
+  height: 310px;
+  clip-path: var(--hex-clip);
+  clip-path: url(#profile-hex-clip);
+  background: linear-gradient(135deg, var(--accent), var(--accent-hover));
+  z-index: 1;
+  animation: hexPulse 4s ease-in-out infinite;
+  will-change: transform, opacity;
+}
+
+@keyframes hexPulse {
+  0%, 100% { transform: scale(1);    opacity: 0.6; }
+  50%      { transform: scale(1.04); opacity: 0.9; }
+}
+
+/* Inner cutout to create the ring effect */
+.profile-hex-outer::after {
+  content: '';
+  position: absolute;
+  inset: 3px;
+  clip-path: var(--hex-clip);
+  clip-path: url(#profile-hex-clip);
+  background: var(--bg-page);
+  transition: background var(--dur-slow) var(--ease-out);
+}
+
+/* ── Waveform Bars ─────────────────────────────────────────── */
+.profile-waveform {
+  position: absolute;
+  width: 340px;
+  height: 340px;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.profile-waveform .wave-bar {
+  position: absolute;
+  width: 3px;
+  background: var(--accent);
+  border-radius: 2px;
+  opacity: 0.5;
+  transform-origin: center bottom;
+  animation: waveBar var(--wave-duration, 1.8s) ease-in-out infinite alternate;
+  will-change: transform, opacity;
+  transition: opacity 0.3s var(--ease-out);
+}
+
+/* Position 12 bars radially around the hexagon */
+.wave-bar:nth-child(1)  { top: -8px;  left: 50%;  height: 18px; transform: translateX(-50%); animation-delay: 0s; }
+.wave-bar:nth-child(2)  { top: 12px;  right: 30px; height: 14px; transform: rotate(30deg);  animation-delay: 0.15s; }
+.wave-bar:nth-child(3)  { top: 60px;  right: 2px;  height: 20px; transform: rotate(60deg);  animation-delay: 0.3s; }
+.wave-bar:nth-child(4)  { top: 50%;   right: -8px; height: 16px; transform: translateY(-50%) rotate(90deg); animation-delay: 0.45s; }
+.wave-bar:nth-child(5)  { bottom: 60px; right: 2px; height: 22px; transform: rotate(120deg); animation-delay: 0.6s; }
+.wave-bar:nth-child(6)  { bottom: 12px; right: 30px; height: 15px; transform: rotate(150deg); animation-delay: 0.75s; }
+.wave-bar:nth-child(7)  { bottom: -8px; left: 50%;  height: 19px; transform: translateX(-50%); animation-delay: 0.9s; }
+.wave-bar:nth-child(8)  { bottom: 12px; left: 30px; height: 14px; transform: rotate(-150deg); animation-delay: 1.05s; }
+.wave-bar:nth-child(9)  { bottom: 60px; left: 2px;  height: 21px; transform: rotate(-120deg); animation-delay: 1.2s; }
+.wave-bar:nth-child(10) { top: 50%;   left: -8px;  height: 17px; transform: translateY(-50%) rotate(-90deg); animation-delay: 1.35s; }
+.wave-bar:nth-child(11) { top: 60px;  left: 2px;   height: 16px; transform: rotate(-60deg);  animation-delay: 1.5s; }
+.wave-bar:nth-child(12) { top: 12px;  left: 30px;  height: 13px; transform: rotate(-30deg);  animation-delay: 1.65s; }
+
+@keyframes waveBar {
+  0%   { scaleY: 0.5; opacity: 0.3; }
+  100% { scaleY: 1.5; opacity: 0.7; }
+}
+
+/* ── Inner Hexagonal Image ─────────────────────────────────── */
+.profile-hex-inner {
+  position: relative;
+  width: 280px;
+  height: 280px;
+  z-index: 3;
+  clip-path: var(--hex-clip);
+  clip-path: url(#profile-hex-clip);
+  overflow: hidden;
+  will-change: transform;
+}
+
+.profile-hex-inner img {
+  width: 100%;
+  height: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  display: block;
+  filter: brightness(0.95) contrast(1.05) saturate(1.1);
+  transition: filter 0.5s var(--ease-out);
+}
+
+.profile-frame-container:hover .profile-hex-inner img {
+  filter: brightness(1.05) contrast(1.02) saturate(1.15);
+}
+
+/* ── Light-leak Reveal on Hover ────────────────────────────── */
+.profile-hex-inner::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    135deg,
+    rgba(255,255,255,0.12) 0%,
+    transparent 50%,
+    rgba(79,142,247,0.08) 100%
+  );
+  opacity: 0;
+  transition: opacity 0.5s var(--ease-out);
+  pointer-events: none;
+}
+
+.profile-frame-container:hover .profile-hex-inner::after {
+  opacity: 1;
+}
+
+/* ── Floating Particles ────────────────────────────────────── */
+.profile-particles {
+  position: absolute;
+  inset: -30px;
+  pointer-events: none;
+  z-index: 0;
+  overflow: hidden;
+}
+
+.profile-particles .particle {
+  position: absolute;
+  width: var(--p-size, 3px);
+  height: var(--p-size, 3px);
+  background: var(--accent);
+  border-radius: 50%;
+  opacity: 0;
+  animation: particleDrift var(--p-dur, 6s) var(--p-delay, 0s) ease-in-out infinite;
+}
+
+@keyframes particleDrift {
+  0%   { opacity: 0;   transform: translate(0, 0) scale(0.5); }
+  20%  { opacity: 0.6; }
+  80%  { opacity: 0.3; }
+  100% { opacity: 0;   transform: translate(var(--p-dx, 20px), var(--p-dy, -60px)) scale(0.2); }
+}
+
+/* Pre-defined particle positions */
+.particle:nth-child(1) { left: 10%; top: 80%; --p-size: 3px; --p-dur: 5s; --p-delay: 0s;   --p-dx: -15px; --p-dy: -70px; }
+.particle:nth-child(2) { left: 85%; top: 70%; --p-size: 2px; --p-dur: 7s; --p-delay: 1.5s; --p-dx: 10px;  --p-dy: -80px; }
+.particle:nth-child(3) { left: 20%; top: 30%; --p-size: 4px; --p-dur: 6s; --p-delay: 0.8s; --p-dx: -20px; --p-dy: -50px; }
+.particle:nth-child(4) { left: 75%; top: 90%; --p-size: 2px; --p-dur: 8s; --p-delay: 2.2s; --p-dx: 25px;  --p-dy: -90px; }
+.particle:nth-child(5) { left: 50%; top: 85%; --p-size: 3px; --p-dur: 5.5s; --p-delay: 3s; --p-dx: 5px;   --p-dy: -65px; }
+.particle:nth-child(6) { left: 30%; top: 95%; --p-size: 2px; --p-dur: 7.5s; --p-delay: 1s; --p-dx: -10px; --p-dy: -75px; }
+.particle:nth-child(7) { left: 65%; top: 40%; --p-size: 3px; --p-dur: 6.5s; --p-delay: 4s; --p-dx: 18px;  --p-dy: -55px; }
+.particle:nth-child(8) { left: 5%;  top: 60%; --p-size: 2px; --p-dur: 9s;   --p-delay: 2s; --p-dx: -25px; --p-dy: -85px; }
+
+/* ── About Section: Smaller Profile Variant ────────────────── */
+.about-profile-small {
+  position: relative;
+  width: 90px;
+  height: 90px;
+  margin-bottom: var(--sp-6);
+}
+
+.about-profile-small .profile-ring {
+  position: absolute;
+  inset: -4px;
+  clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+  background: linear-gradient(135deg, var(--accent), var(--accent-hover));
+  animation: hexPulse 4s ease-in-out infinite;
+}
+
+.about-profile-small .profile-ring::after {
+  content: '';
+  position: absolute;
+  inset: 2.5px;
+  clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+  background: var(--bg-card);
+  transition: background var(--dur-slow) var(--ease-out);
+}
+
+.about-profile-small img {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+  display: block;
+  z-index: 1;
+  filter: brightness(0.95) contrast(1.05);
+  transition: filter 0.4s var(--ease-out);
+}
+
+.about-profile-small:hover img {
+  filter: brightness(1.05) contrast(1.02);
+}
+
+.about-profile-small .mini-glow {
+  position: absolute;
+  inset: -15px;
+  border-radius: 50%;
+  background: radial-gradient(circle, var(--accent-glow) 0%, transparent 70%);
+  opacity: 0.4;
+  filter: blur(12px);
+  pointer-events: none;
+  animation: glowShift 6s ease-in-out infinite alternate;
+}
+
+/* ── Responsive ────────────────────────────────────────────── */
+@media (max-width: 900px) {
+  .profile-frame-container {
+    width: 300px;
+    height: 340px;
+  }
+
+  .profile-hex-outer {
+    width: 250px;
+    height: 250px;
+  }
+
+  .profile-hex-inner {
+    width: 226px;
+    height: 226px;
+  }
+
+  .profile-waveform {
+    width: 275px;
+    height: 275px;
+  }
+
+  .frag--hex  { width: 45px; height: 45px; }
+  .frag--tri  { width: 30px; height: 30px; }
+  .frag--circle { width: 18px; height: 18px; }
+  .frag--diamond { width: 24px; height: 24px; }
+}
+
+@media (max-width: 500px) {
+  .profile-frame-container {
+    width: 250px;
+    height: 290px;
+  }
+
+  .profile-hex-outer {
+    width: 210px;
+    height: 210px;
+  }
+
+  .profile-hex-inner {
+    width: 188px;
+    height: 188px;
+  }
+
+  .profile-waveform {
+    width: 230px;
+    height: 230px;
+  }
+
+  .profile-geo-frags { display: none; }
+}
+
